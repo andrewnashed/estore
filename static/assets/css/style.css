@@ -1,0 +1,123 @@
+#main {
+    display:flex;
+    align-items: center;
+    text-align: center;
+}
+
+
+article {
+    padding: 1.5rem;
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin: auto;
+    text-align: center;
+    font-family: arial;
+}
+  
+ .card img {
+     width: 100%;
+}
+
+.image img {
+    width: 100%;
+}
+
+  
+.price {
+    color: grey;
+    font-size: 22px;
+  
+}
+
+.details {
+    padding: 15px;
+}
+
+/* Login Form */
+.login-signup {
+    background: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 10px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    text-align: center;
+    
+}
+
+.login-signup h2 {
+    margin-top: 10px;
+    width: 100%;
+}
+  
+.login-signup a {
+    margin-top: 20px;
+    width: 100%;
+}
+/* cart */
+.table-wrapper {
+    width: 100%;
+}
+
+.checkout {
+    width: 100%;
+    display: block;
+}
+
+.alt a {
+    text-decoration: none;
+}
+
+@media screen and (min-width: 1024px) {
+    article {
+        width: 80%;
+    }
+    .card {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        grid-template-rows: 1fr;
+        gap: 0px 20px;
+      }
+      
+      .card img {
+        grid-area: 1 / 1 / 2 / 3; 
+        width: 55%;
+        height: 100%;
+    }
+
+    .details { 
+        grid-area: 1 / 2 / 2 / 3; 
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .details h1 {
+        width: 100%;
+    }
+
+
+
+    .details p {
+        padding: 10px;
+    }
+
+    /* login & sign up forms */
+    .center {
+        display:flex;
+        justify-content: center;
+    }
+
+    .login-signup {
+        width: 50%;
+        margin: 60px;
+    }
+
+    .login-signup h2 {
+        margin-top: 40px;
+        width: 100%;
+    }

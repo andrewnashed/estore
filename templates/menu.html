@@ -1,0 +1,15 @@
+<!--Menu-->
+<nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+         {% if not current_user.is_authenticated: %}
+        <li><a href="{{ url_for('login') }}">Login</a></li>
+        <li><a href="{{ url_for('register') }}">Sign Up</a></li>
+        {% else: %}
+        <li><a href="{{ url_for('cart') }}">My Cart</a></li>
+        <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+        {% endif %}
+        <li><a href="#footer">Contact</a></li>
+    </ul>
+</nav>
