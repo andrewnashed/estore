@@ -5,7 +5,6 @@ from flask_bootstrap import Bootstrap
 from flask_login import UserMixin, login_user, LoginManager, login_required, current_user, logout_user
 from functools import wraps
 from flask_ckeditor import CKEditor
-from contact import send_email
 from forms import *
 import stripe
 from werkzeug.security import check_password_hash, generate_password_hash
@@ -85,12 +84,6 @@ db.create_all()
 @app.route("/", methods=["POST", "GET"])
 def home():
     products = Products.query.all()
-    if request.method == "POST":
-        name = request.form["name"]
-        email = request.form["email"]
-        message = request.form["message"]
-        send_email(name, email, message)
-        return render_template("index.html", products=products, msg_sent=True)
     return render_template("index.html", products=products, current_user=current_user)
 
 
