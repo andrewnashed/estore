@@ -15,7 +15,7 @@ class CreateProductForm(FlaskForm):
 
 class RegisterForm(FlaskForm):
     name = StringField('Name', validators=[DataRequired()])
-    email = EmailField('Email', validators=[Email()])
+    email = StringField('Email', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password',
                                      validators=[DataRequired(), EqualTo('password')])
@@ -23,6 +23,6 @@ class RegisterForm(FlaskForm):
 
 
 class LoginForm(FlaskForm):
-    email = EmailField('Email', validators=[Email()])
+    email = StringField('Email', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Log In')
