@@ -76,7 +76,7 @@ class Cart(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
 
     def __repr__(self):
-        return f"products('{self.id}', '{self.items}', '{self.product_id}', '{self.user_id}')"
+        return f"cart('{self.id}', '{self.items}', '{self.product_id}', '{self.user_id}')"
 
 
 db.create_all()
