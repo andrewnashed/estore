@@ -104,7 +104,7 @@ def new_product():
         )
         db.session.add(new_post)
         db.session.commit()
-        return redirect(url_for('home'))
+        return redirect(url_for('home', current_user=current_user))
     return render_template("add-product.html", form=form, current_user=current_user)
 
 
@@ -191,7 +191,7 @@ def logout():
 
 DOMAIN = os.getenv("DOMAIN")
 
-@login_required
+
 @app.route('/create-checkout-session', methods=['POST'])
 def create_checkout_session():
     cart = Cart.query.filter_by(user_id=current_user.id).all()
