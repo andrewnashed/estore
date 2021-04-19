@@ -52,6 +52,9 @@ class User(UserMixin, db.Model):
     name = db.Column(db.String(1000))
     cart = db.relationship("Cart", uselist=False, backref="user")
 
+    def __repr__(self):
+        return f"user('{self.id}', '{self.email}', '{self.password}', '{self.name}', '{self.cart})"
+
 
 class Products(db.Model):
     __tablename__ = 'products'
@@ -61,6 +64,9 @@ class Products(db.Model):
     image = db.Column(db.Text)
     price = db.Column(db.Integer, nullable=False)
 
+    def __repr__(self):
+        return f"products('{self.id}', '{self.name}', '{self.description}', '{self.image}', '{self.price}')"
+
 
 class Cart(db.Model):
     __tablename__ = 'cart'
@@ -68,6 +74,9 @@ class Cart(db.Model):
     items = db.Column(db.Text)
     product_id = db.Column(db.Integer, db.ForeignKey('products.id'))
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+
+    def __repr__(self):
+        return f"products('{self.id}', '{self.items}', '{self.product_id}', '{self.user_id}')"
 
 
 db.create_all()
